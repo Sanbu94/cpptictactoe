@@ -7,10 +7,6 @@ int row;
 int column;
 char symbol = 'X';
 
-
-
-
-
 int main() 
 {
 
