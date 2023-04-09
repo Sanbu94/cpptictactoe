@@ -1,107 +1,93 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-int board[3][3] = {{ 1, 2, 3}, {4, 5, 6}, {7, 8, 9 }};
-int row;
-int column;
-char symbol = 'X';
+char board[10] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+void gameboard();
+int win();
 
-int main() 
+
+int main()
 {
+	int player = 1, i, selection;
+	char symbol;
 
-	string player1;
-	string player2;
-
-	cout << "Player 1 enter your name!: \n";
-	getline(cin, player1);
-
-	cout << "Player 2 enter your name!: \n";
-	getline(cin, player2);
-
+	do 
+	{
+		gameboard();
+if (player % 2 ==1)
+player = 1;
+else
+player = 2;		
 	
-	cout << player1 << "(X)" <<  player2 << " (0)\n\n";
-
-	cout << "    |    |    " << endl;
-	cout << "  " << board[0][0] << " | " << board[0][1] << "  | " << board[0][2] << endl;
-
-	cout << "----|----|----" << endl;
-	cout << "    |    |    " << endl;
-
-	cout << "  " << board[1][0] << " | " << board[1][1] << "  | " << board[1][2] << endl;
-
-	cout << "----|----|----" << endl;
-	cout << "    |    |    " << endl;
-
-	cout << "  " << board[2][0] << " | " << board[2][1] << "  | " << board[2][2] << endl;
+cout << "Player " << player << " make your move!! ENTER A NUMBER BETWEEN 1-9!: ";
+cin>>selection;
 
 
-	int move;
+if (player == 1)
+{
+	symbol = 'X';
+}
+else {
+	symbol = 'O';
+}
+if (selection == 1 && board[1] == '1')
+board [1] = symbol;
+else if (selection == 2 && board [2] == '2')
+board [2] = symbol;
+else if (selection == 3 && board [3] == '3')
+board [3] = symbol;
+else if (selection == 4 && board [4] == '4')
+board [4] = symbol;
+else if (selection == 5 && board [5] == '5')
+board [5] = symbol;
+else if (selection == 6 && board [6] == '6')
+board [6] = symbol;
+else if (selection == 7 && board [7] == '7')
+board [7] = symbol;
+else if (selection == 8 && board [8] == '8')
+board [8] = symbol;
+else if (selection == 9 && board [9] == '9')
+board [9] = symbol;
+else
+{
+	cout<<" Invalid input, please enter a number 1-9";
+	player --;
+	cin.ignore();
+	cin.get();
 
-	if(symbol=='X')
-	{
-		cout<<player1<<" make your move, please enter a number!";
-		cin>>move;
-	}
-	if(symbol=='O')
-	{
-		cout<<player2<<" make your move, please enter a number!";
-		cin>>move;
-	}
-
-	if (move == 1)
-	{
-		row = 0;
-		column = 0;
-	}
-	if (move== 2)
-	{
-		row = 0;
-		column = 1;
-	}
-	if (move== 3)
-	{
-		row = 0;
-		column = 2;
-	}
-	if (move== 4)
-	{
-		row = 1;
-		column = 0;
-	}
-	if (move== 5)
-	{
-		row = 1;
-		column = 1;
-	}
-	if (move== 6)
-	{
-		row = 1;
-		column = 2;
-	}
-	if (move== 7)
-	{
-		row = 2;
-		column = 0;
-	}
-	if (move== 8)
-	{
-		row = 2;
-		column = 1;
-	}
-	if (move== 9)
-	{
-		row = 2;
-		column = 2;
-	}
-
-	else
-	{
-	cout << "\nYou cant place your symbol there, try again! ";
-	}
+}
+i = win();
+player ++;
+}
+while (i == -1);
+gameboard();
+if (i == 1)
+cout<<"Player "<<--player << " wins!!";
+else
+cout<<" Game is a draw!";
+cin.ignore();
+cin.get();
+return 0;
 }
 
-		
+void gameboard()
+{
+	cout << "    |    |    " << endl;
+cout << "  " << board[1] << " | " << board[2] << "  | " << board[3] << endl;
+
+cout << "----|----|----" << endl;
+cout << "    |    |    " << endl;
+
+cout << "  " << board[4] << " | " << board[5] << "  | " << board[6] << endl;
+
+cout << "----|----|----" << endl;
+cout << "    |    |    " << endl;
+
+cout << "  " << board[7] << " | " << board[8] << "  | " << board[9] << endl;
+
+}
+
+
 
 
 
