@@ -30,3 +30,10 @@ This a simple tic-tac-toe console based game done with C++
 - Once you have a compiler and you have downloaded the extensions mentioned above you are good to go!!
 - Start VS Code and press the play button in the top right corner to run your code.
 - Enjoy!
+
+### Self-evaluation
+
+- I got the project going smoothly, but encountered some problems with the first gameboard design, so I had to start from scratch.
+- Spent a lot of time figuring out how to check if either player has won and managed to do it.
+- There is a problem with checking if the game has ended in a draw. That was the most difficult part for me.
+- Managed to build a fully playable version of Tic Tac Toe using C++, but did not manage to implement a solution to check if the game has ended in a draw.
